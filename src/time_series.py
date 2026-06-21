@@ -132,51 +132,6 @@ plt.tight_layout()
 plt.show()
 plt.close()
 
-
-#weekday seasonality analysis
-
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# load data
-df = pd.read_csv("data/raw/full_data.csv")
-
-# datetime conversion
-df["started_at"] = pd.to_datetime(df["started_at"])
-
-# extract weekday
-df["weekday"] = df["started_at"].dt.day_name()
-
-# correct order
-weekday_order = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday"
-]
-
-# count alerts
-weekday_counts = (
-    df["weekday"]
-    .value_counts()
-    .reindex(weekday_order)
-)
-
-# plot
-plt.figure(figsize=(9, 5))
-plt.bar(weekday_counts.index, weekday_counts.values)
-
-plt.title("Air Raid Alerts by Weekday")
-plt.xlabel("Weekday")
-plt.ylabel("Number of alerts")
-
-plt.tight_layout()
-plt.show()
-plt.close()
-
 #Step 4
 # rolling statistics
 daily_alerts["rolling_mean_7"] = (
