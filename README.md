@@ -120,3 +120,30 @@ As a result, the forecasting problem is better described as **a stochastic event
 ```bash
 git clone https://github.com/your-username/air-raid-time-series-analysis.git
 cd air-raid-time-series-analysis
+
+2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate     # Windows
+3. Install dependencies
+pip install -r requirements.txt
+4. Run analysis
+
+You can run the project via Jupyter notebooks:
+
+jupyter notebook notebooks/01_eda.ipynb
+jupyter notebook notebooks/02_forecasting.ipynb
+📁 Project Structure
+project/
+│
+├── data/                  # Raw dataset
+├── notebooks/            # EDA and forecasting notebooks
+├── src/                  # Python modules (preprocessing, modeling)
+├── outputs/              # Generated plots and results
+├── requirements.txt      # Dependencies
+└── README.md             # Project documentation
+
+
+📌 Author Notes
+
+This project was developed as an end-to-end data science exercise focusing on real-world event-driven time series data and the limitations of classical forecasting methods in such contexts.
